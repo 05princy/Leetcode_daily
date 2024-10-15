@@ -1,0 +1,10 @@
+#python code
+class Solution:
+    def minimumSteps(self, s: str) -> int:
+        swap,bl=0,0
+        for c in s:
+            if c=='0':
+                swap+=bl
+            else:
+                bl+=1
+        return swap
