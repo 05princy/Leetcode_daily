@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int maxScore(string s) {
+        int n = s.length();
+        int res = INT_MIN;
+
+        for (int i = 0; i <= n - 2; i++) {
+            int z_cnt = 0;
+            for (int j = 0; j <= i; j++) {
+                if (s[j] == '0') 
+                z_cnt++;
+            }
+            int o_cnt = 0;
+            for (int j = i + 1; j < n; j++) {
+                if (s[j] == '1')
+                o_cnt++;
+            }
+            res = max(res, z_cnt + o_cnt);
+        }
+
+        return res;
+    }
+};
